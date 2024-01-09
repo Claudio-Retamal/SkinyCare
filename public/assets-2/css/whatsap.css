@@ -1,0 +1,11 @@
+/* Estilos para el botón flotante */
+.float-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .float-whatsapp img {
+    width: 60px; /* Ajusta el tamaño del icono de WhatsApp según sea necesario */
+  }

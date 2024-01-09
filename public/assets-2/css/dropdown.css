@@ -1,0 +1,15 @@
+.dropend .dropdown-toggle {
+    color: salmon;
+    margin-left: 1em;
+}
+
+.dropdown-item:hover {
+    background-color: lightsalmon;
+    color: #fff;
+}
+
+@media screen and (min-width:769px) {
+    .dropend .dropdown-toggle {
+        margin-left: .5em;
+    }
+}
