@@ -1,10 +1,17 @@
 <?php
 
+use App\Http\Controllers\ComprasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ServiciosFemeninosController;
+use App\Http\Controllers\ServiciosMasculinosController;
+use App\Http\Controllers\TratamientosController;
+
 use App\Http\Controllers\SessionsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,7 +53,23 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+Route::get('Fotodepilacion-Masculina', [ServiciosMasculinosController::class, 'FotodepilacionMasculina']);
+Route::get('Promocion-Masculina', [ServiciosMasculinosController::class, 'PromocionMasculina']);
+Route::get('Individuales-Masculino', [ServiciosMasculinosController::class, 'IndividualesMasculino']);
+//Women
+Route::get('Fotodepilacion-Femenina', [ServiciosFemeninosController::class, 'FotodepilacionFemenina']);
+Route::get('Promocion-Femenina', [ServiciosFemeninosController::class, 'PromocionFemenina']);
+Route::get('Individuales-Femenino', [ServiciosFemeninosController::class, 'IndividualesFemenino']);
+//Tratamientos
+Route::get('Tratamientos', [TratamientosController::class, 'Tratamientos']);
+///MENU
+//contact
+Route::get('Contacto', [MenuController::class, 'Contacto']);
+//nosotros
+Route::get('Nosotros', [MenuController::class, 'Nosotros']);
+//compras
+Route::get('Carro', [ComprasController::class, 'Carro']);
+//-----------------------------------------------------------------
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');

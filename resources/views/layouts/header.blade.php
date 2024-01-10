@@ -113,7 +113,7 @@
                                     <li><a href="it_blog.html">Nosotros</a>
                                         <ul>
                                             <li><a href="{{ url('') }}">Nuestra Tecnología</a></li>
-                                            <li><a href="{{ url('Individuales-Masculina') }}">Certificaciones</a></li>
+                                            <li><a href="{{ url('Individuales-Masculino') }}">Certificaciones</a></li>
                                         </ul>
                                     </li>
 

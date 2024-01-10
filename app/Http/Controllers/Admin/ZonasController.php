@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Servicios;
-use App\Models\TipoServicios;
 use App\Models\Zonas;
 use Illuminate\Http\Request;
 
-class ServiciosController extends Controller
+class ZonasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,8 @@ class ServiciosController extends Controller
     public function index()
     {
         //
-        $servicios = Servicios::all();
-        $tipo_servicios = TipoServicios::all();
         $zonas = Zonas::all();
-        return view('layouts.servicios.index', compact('servicios', 'zonas', 'tipo_servicios'));
+        return view('layouts.zonas.index', compact('zonas'));
     }
 
     /**
@@ -36,6 +32,17 @@ class ServiciosController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'nombre' => 'required|max:255',
+        ]);
+
+        if ($validated) {
+           
+        $new_zona = new Zonas();
+        $new_zona->nombre = $request->input('nombre');
+        $new_zona->save();
+        return redirect()->route('admin/zonas')->with('success','ALmacenado');
+        } 
     }
 
     /**
