@@ -15,7 +15,7 @@ class ZonasController extends Controller
     {
         //
         $zonas = Zonas::all();
-        return view('layouts.zonas.index', compact('zonas'));
+        return view('pages.laravel-examples.user-management', compact('zonas'));
     }
 
     /**

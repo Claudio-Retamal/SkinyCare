@@ -26,6 +26,19 @@
                     <span class="nav-link-text ms-1">User Profile</span>
                 </a>
             </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'user-management' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('user-management') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Zonas</span>
+                </a>
+            </li>
+
+            
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'user-management' ? ' active bg-gradient-primary' : '' }} "
                     href="{{ route('user-management') }}">
@@ -35,6 +48,10 @@
                     <span class="nav-link-text ms-1">User Management</span>
                 </a>
             </li>
+
+           
+
+
             <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Pages</h6>
             </li>
@@ -56,6 +73,17 @@
                     <span class="nav-link-text ms-1">Tables</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{ $activePage == 'tables-2' ? ' active bg-gradient-primary' : '' }} "
+                    href="{{ route('tables-2') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">table_view</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Tables-2</span>
+                </a>
+            </li>
+            
             <li class="nav-item">
                 <a class="nav-link text-white {{ $activePage == 'billing' ? ' active bg-gradient-primary' : '' }}  "
                     href="{{ route('billing') }}">

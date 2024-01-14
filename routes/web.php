@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ZonasController;
 use App\Http\Controllers\ComprasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -88,12 +89,19 @@ Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('aut
 Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
 Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');
 Route::group(['middleware' => 'auth'], function () {
+
+	
 	Route::get('billing', function () {
 		return view('pages.billing');
 	})->name('billing');
 	Route::get('tables', function () {
 		return view('pages.tables');
 	})->name('tables');
+
+	Route::get('tables-2', function () {
+		return view('pages.tables-2');
+	})->name('tables-2');
+
 	Route::get('rtl', function () {
 		return view('pages.rtl');
 	})->name('rtl');
@@ -109,9 +117,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('static-sign-up', function () {
 		return view('pages.static-sign-up');
 	})->name('static-sign-up');
-	Route::get('user-management', function () {
-		return view('pages.laravel-examples.user-management');
-	})->name('user-management');
+	Route::get('user-management', [ZonasController::class, 'index'])->name('user-management');
 	Route::get('user-profile', function () {
 		return view('pages.laravel-examples.user-profile');
 	})->name('user-profile');
