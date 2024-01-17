@@ -38,30 +38,41 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('assets') }}/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
     
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
+
 <body class="{{ $bodyClass }}">
 
-{{ $slot }}
+    {{ $slot }}
 
-<script src="{{ asset('assets') }}/js/core/popper.min.js"></script>
-<script src="{{ asset('assets') }}/js/core/bootstrap.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/perfect-scrollbar.min.js"></script>
-<script src="{{ asset('assets') }}/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="{{ asset('assets') }}/js/core/popper.min.js"></script>
+    <script src="{{ asset('assets') }}/js/core/bootstrap.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-@stack('js')
-<script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-        var options = {
-            damping: '0.5'
+    @stack('js')
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="{{ asset('assets') }}/js/material-dashboard.min.js?v=3.0.0"></script>
 
-</script>
-<!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="{{ asset('assets') }}/js/material-dashboard.min.js?v=3.0.0"></script>
 </body>
+
 </html>

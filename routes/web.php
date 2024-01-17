@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ServiciosController;
 use App\Http\Controllers\Admin\ZonasController;
 use App\Http\Controllers\ComprasController;
 use Illuminate\Support\Facades\Route;
@@ -88,19 +89,20 @@ Route::get('/reset-password/{token}', function ($token) {
 Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
 Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');
-Route::group(['middleware' => 'auth'], function () {
 
-	
+//Midleware
+Route::group(['middleware' => 'auth'], function () {
+		
 	Route::get('billing', function () {
 		return view('pages.billing');
 	})->name('billing');
-	Route::get('tables', function () {
-		return view('pages.tables');
-	})->name('tables');
+	// Route::get('tables', function () {
+	// 	return view('pages.tables');
+	// })->name('tables');
 
-	Route::get('tables-2', function () {
-		return view('pages.tables-2');
-	})->name('tables-2');
+	// Route::get('tables-2', function () {
+	// 	return view('pages.tables-2');
+	// })->name('tables-2');
 
 	Route::get('rtl', function () {
 		return view('pages.rtl');
@@ -117,7 +119,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('static-sign-up', function () {
 		return view('pages.static-sign-up');
 	})->name('static-sign-up');
-	Route::get('user-management', [ZonasController::class, 'index'])->name('user-management');
+	Route::get('zonas-admin', [ZonasController::class, 'index'])->name('zonas-admin');
+	Route::get('servicios-admin', [ServiciosController::class, 'index'])->name('servicios-admin');
 	Route::get('user-profile', function () {
 		return view('pages.laravel-examples.user-profile');
 	})->name('user-profile');

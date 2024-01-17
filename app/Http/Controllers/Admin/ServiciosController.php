@@ -19,7 +19,8 @@ class ServiciosController extends Controller
         $servicios = Servicios::all();
         $tipo_servicios = TipoServicios::all();
         $zonas = Zonas::all();
-        return view('layouts.servicios.index', compact('servicios', 'zonas', 'tipo_servicios'));
+        return view('pages.laravel-examples.servicios', compact('servicios','tipo_servicios','zonas'));
+        // return view('layouts.servicios.index', compact('servicios', 'zonas', 'tipo_servicios'));
     }
 
     /**
