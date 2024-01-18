@@ -18,80 +18,66 @@
                             </div>
                         </div>
                         <div class=" me-3 my-3 text-end">
-                            <button class="btn bg-gradient-dark mb-0" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                            <button class="btn bg-gradient-dark mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <i class="material-icons text-sm">add</i>&nbsp;&nbsp;Agregar Nueva
                             </button>
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header bg-primary">
-                                        <h5 class="modal-title" style="color: rgb(250, 250, 250)"
-                                            id="exampleModalLabel">Gestión de servicios</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                                        <h5 class="modal-title" style="color: rgb(250, 250, 250)" id="exampleModalLabel">Gestión de servicios</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-12">
-                                            <form action="{{ url('admin/zonas-store') }}" method="POST"
-                                                enctype="multipart/form-data">
+                                            <form action="{{ route('servicios-store') }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
 
                                                 <div class="row">
                                                     <div class="mb-3 col-md-12">
                                                         <label class="form-label">Tipo de servicio</label>
-                                                        <select id="tipo"
-                                                            class="form-control border border-2 p-2 border-primary"
-                                                            name= "tipo">
+                                                        <select id="tipo" class="form-control border border-1 p-2 border-primary" name="tipo">
                                                             @foreach ($tipo_servicios as $tipos)
-                                                                <option value="{{ $tipos->id }}">
-                                                                    {{ $tipos->nombre }}</option>
+                                                            <option value="{{ $tipos->id }}">
+                                                                {{ $tipos->nombre }}
+                                                            </option>
                                                             @endforeach
 
                                                         </select>
-                                                        {{-- <span class="badge badge-primary">Tipo de servicio</span> --}}
+                                                        <div class="@error('tipo') is-invalid @enderror"></div>
+                                                        @error('tipo')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
 
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <label class="form-label">Nombre</label>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control border border-1 p-2 border-primary" name="name" id="name">
 
-
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                                 <div class="row">
-                                                    <div class="mb-3 col-md-12">
-                                                        <label class="form-label">Email address</label>
-                                                        <select class="form-control border border-2 p-2 border-primary"
-                                                            aria-label="Default select example" name="sexo"
-                                                            id="sexo">
+                                                    <div class="mb-3 col-md-6">
+                                                        <label class="form-label">Sexo</label>
+                                                        <select class="form-control border border-1 p-2 border-primary" aria-label="Default select example" name="sexo" id="sexo">
                                                             <option disabled>Seleccione sexo</option>
                                                             <option value="1">Masculino</option>
                                                             <option value="2">Femenino</option>
                                                             <option value="2">Sin Especificar</option>
                                                         </select>
                                                     </div>
-                                                </div>
 
-                                                <div class="row">
                                                     <div class="col-md-6">
-                                                        <label class="form-label">Email address</label>
+                                                        <label class="form-label">Descuento</label>
                                                         <div class="form-group">
-                                                            <input type="number"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                id="descuento" aria-describedby="emailHelp"
-                                                                placeholder="Ingrese descuento a aplicar"
-                                                                name="descuento">
-
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label class="form-label">Email address</label>
-                                                        <div class="form-group">
-                                                            <input type="text"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                name="name" id="name">
+                                                            <input type="number" class="form-control border border-1 p-2 border-primary" id="descuento" aria-describedby="emailHelp" placeholder="Ingrese descuento a aplicar" name="descuento">
 
                                                         </div>
                                                     </div>
@@ -99,80 +85,54 @@
 
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <label class="form-label">Email address</label>
+                                                        <label class="form-label">Cantidad Minima</label>
                                                         <div class="form-group">
-
-
-                                                            <input type="text"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                id="cant_min_sesion" aria-describedby="emailHelp"
-                                                                placeholder="Enter your name" name="cant_min">
+                                                            <input type="text" class="form-control border border-1 p-2 border-primary" id="cant_min_sesion" aria-describedby="emailHelp" placeholder="Enter your name" name="cant_min">
 
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
-                                                        <label class="form-label">Email address</label>
+                                                        <label class="form-label">Cantidad Maxima</label>
                                                         <div class="form-group">
-                                                            <input type="text"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                id="max_sesion" name="cant_max"
-                                                                aria-describedby="emailText" placeholder="tipo">
+                                                            <input type="number" class="form-control border border-1 p-2 border-primary" id="cant_max" aria-describedby="emailHelp" placeholder="Ingrese descuento a aplicar" name="cant_max">
 
                                                         </div>
                                                     </div>
-
                                                 </div>
 
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <label class="form-label">Email address</label>
-
+                                                        <label class="form-label">Precio minimo</label>
                                                         <div class="form-group">
-                                                            <input type="text"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                id="min_price" aria-describedby="emailHelp"
-                                                                placeholder="Enter your name" name="min_price">
-
+                                                            <input type="text" class="form-control border border-1 p-2 border-primary" id="min_price" aria-describedby="emailHelp" placeholder="Enter your name" name="min_price">
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
-                                                        <label class="form-label">Email address</label>
+                                                        <label class="form-label">Precio Maximo</label>
 
                                                         <div class="form-group ">
-                                                            <input type="text"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                id="cantidad_maxima" aria-describedby="emailHelp"
-                                                                placeholder="Enter your name" name="max_price">
-
+                                                            <input type="text" class="form-control border border-1 p-2 border-primary" id="max_price" aria-describedby="emailHelp" placeholder="Enter your name" name="max_price">
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <label class="form-label">Email address</label>
+                                                        <label class="form-label">Descripción</label>
 
                                                         <div class="form-group">
-                                                            <input type="text"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                name="descripcion">
-
-
+                                                            <textarea type="text" class="form-control border border-1 p-2 border-primary" name="descripcion"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <label class="form-label">Email address</label>
-
+                                                        <label class="form-label">Imagen</label>
                                                         <div class="form-group">
-                                                            <input type="file"
-                                                                class="form-control border border-2 p-2 border-primary"
-                                                                id="imagen" aria-describedby="emailHelp"
-                                                                placeholder="Imagen" name="imagen">
+                                                            <input type="file" class="form-control border border-1 p-2 border-primary" id="imagen" aria-describedby="emailHelp" placeholder="Imagen" name="imagen">
 
                                                         </div>
                                                     </div>
@@ -181,24 +141,24 @@
 
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="card p-1">
-                                                            <select id="miSelect" class="form-control "
-                                                                name="zonas[]" multiple>
+                                                        <label class="form-label">Zonas</label>
+
+                                                        <div class="card p-1 border border-1">
+                                                            <select id="miSelect" class="form-control " name="zonas[]" multiple>
                                                                 @foreach ($zonas as $zona)
-                                                                    <option value="{{ $zona->nombre }}">
-                                                                        {{ $zona->nombre }}</option>
+                                                                <option value="{{ $zona->nombre }}">
+                                                                    {{ $zona->nombre }}
+                                                                </option>
                                                                 @endforeach
                                                             </select>
-                                                            <small id="emailHelp"
-                                                                class="form-text text-muted">Zonas</small>
+
                                                         </div>
                                                     </div>
                                                 </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save changes</button>
                                         </form>
                                     </div>
@@ -230,67 +190,54 @@
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 ID
                                             </th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Tipo
                                             </th>
 
                                             {{-- <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 PHOTO</th> --}}
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 NOMBRE</th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 SEXO</th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 ZONAS</th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 MIN-SESION</th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 MAX-SESION</th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 PRECIO-X-MIN</th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 PRECIO-X-MAX</th>
 
 
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 IMAGEN
                                             </th>
 
                                             {{-- <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 EMAIL</th> --}}
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 ESTADO</th>
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 FECHA DE CREACIÓN
                                             </th>
 
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 ACCIONES
                                             </th>
                                         </tr>
@@ -373,9 +320,7 @@
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div>
-                                                        <img src="{{ asset('assets') }}/img/team-2.jpg"
-                                                            class="avatar avatar-sm me-3 border-radius-lg"
-                                                            alt="user1">
+                                                        <img src="{{ asset('assets') }}/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                                                     </div>
 
                                                 </div>
@@ -390,14 +335,12 @@
 
 
                                             <td class="align-middle">
-                                                <a rel="tooltip" class="btn btn-success btn-link" href=""
-                                                    data-original-title="" title="">
+                                                <a rel="tooltip" class="btn btn-success btn-link" href="" data-original-title="" title="">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </a>
 
-                                                <button type="button" class="btn btn-danger btn-link"
-                                                    data-original-title="" title="">
+                                                <button type="button" class="btn btn-danger btn-link" data-original-title="" title="">
                                                     <i class="material-icons">close</i>
                                                     <div class="ripple-container"></div>
                                                 </button>

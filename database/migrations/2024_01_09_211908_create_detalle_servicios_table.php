@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->unsignedBiginteger('servicios_id')->nullable();
             $table->foreign('servicios_id')->references('id')->on('servicios')->nullable()->constrained()->onUpdate('cascade');
-            $table->integer('estado');
+            $table->integer('estado')->default(1);
             $table->timestamps();
         });
     }

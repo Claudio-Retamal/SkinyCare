@@ -121,6 +121,8 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('static-sign-up');
 	Route::get('zonas-admin', [ZonasController::class, 'index'])->name('zonas-admin');
 	Route::get('servicios-admin', [ServiciosController::class, 'index'])->name('servicios-admin');
+	Route::post('servicios-store', [ServiciosController::class, 'store'])->name('servicios-store');
+
 	Route::get('user-profile', function () {
 		return view('pages.laravel-examples.user-profile');
 	})->name('user-profile');
