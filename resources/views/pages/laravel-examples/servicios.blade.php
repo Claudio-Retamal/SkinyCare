@@ -198,9 +198,6 @@
                                                 Tipo
                                             </th>
 
-                                            {{-- <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                PHOTO</th> --}}
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 NOMBRE</th>
 
@@ -223,16 +220,12 @@
                                                 PRECIO-X-MAX</th>
 
 
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                ESTADO</th>
 
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 IMAGEN
                                             </th>
-
-                                            {{-- <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                EMAIL</th> --}}
-                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                ESTADO</th>
                                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 FECHA DE CREACIÓN
                                             </th>
@@ -244,78 +237,87 @@
                                     </thead>
                                     <tbody>
 
+                                        @foreach ($servicios as $servicio)
                                         <tr>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <p class="mb-0 text-sm"></p>
+                                                        <p class="mb-0 text-sm">{{ $servicio['id'] }}</p>
                                                     </div>
-                                                </div>
-                                            </td>
-
-                                            <td>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm"></h6>
-
                                                 </div>
                                             </td>
 
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <p class="mb-0 text-sm"></p>
+                                                        <p class="mb-0 text-sm">{{ $servicio['tipo_id'] }}</p>
                                                     </div>
-                                                </div>
-                                            </td>
-
-                                            <td>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm"></h6>
-
-                                                </div>
-                                            </td>
-
-
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <p class="mb-0 text-sm"></p>
-                                                    </div>
-                                                </div>
-                                            </td>
-
-                                            <td>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm"></h6>
-
-                                                </div>
-                                            </td>
-
-
-                                            <td>
-                                                <div class="d-flex px-2 py-1">
-                                                    <div class="d-flex flex-column justify-content-center">
-                                                        <p class="mb-0 text-sm"></p>
-                                                    </div>
-                                                </div>
-                                            </td>
-
-                                            <td>
-                                                <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm"></h6>
-
                                                 </div>
                                             </td>
 
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <p class="mb-0 text-sm"></p>
+                                                        <p class="mb-0 text-sm">{{ $servicio['nombre'] }}</p>
                                                     </div>
                                                 </div>
                                             </td>
 
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio->sexo }}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
 
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio['zonas'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio['cantidad_min_sesion'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio['cantidad_max_sesion'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio['precio_min_sesion'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio['precio_max_sesion'] }}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio['estado'] == 1 ? 'Activo' : 'Inactivo' }}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
 
                                             <td>
                                                 <div class="d-flex px-2 py-1">
@@ -325,14 +327,14 @@
 
                                                 </div>
                                             </td>
-
-                                            <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold"></span>
+      
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <p class="mb-0 text-sm">{{ $servicio['created_at'] }}</p>
+                                                    </div>
+                                                </div>
                                             </td>
-                                            <td class="align-middle text-center">
-                                                <span class="text-secondary text-xs font-weight-bold"></span>
-                                            </td>
-
 
                                             <td class="align-middle">
                                                 <a rel="tooltip" class="btn btn-success btn-link" href="" data-original-title="" title="">
@@ -346,7 +348,7 @@
                                                 </button>
                                             </td>
                                         </tr>
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
