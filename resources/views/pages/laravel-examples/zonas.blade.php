@@ -24,6 +24,7 @@
                         </div>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header bg-primary">
@@ -32,7 +33,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="col-md-12">
-                                            <form action="{{ url('admin/zonas-store') }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('zonas-store') }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="mb-3 col-md-12">

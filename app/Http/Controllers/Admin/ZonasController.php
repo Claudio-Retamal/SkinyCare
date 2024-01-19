@@ -26,6 +26,8 @@ class ZonasController extends Controller
         //
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      */
@@ -41,7 +43,7 @@ class ZonasController extends Controller
         $new_zona = new Zonas();
         $new_zona->nombre = $request->input('nombre');
         $new_zona->save();
-        return redirect()->route('admin/zonas')->with('success','ALmacenado');
+        return redirect()->route('admin/zonas')->with('success','Almacenado');
         } 
     }
 

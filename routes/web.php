@@ -120,6 +120,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.static-sign-up');
 	})->name('static-sign-up');
 	Route::get('zonas-admin', [ZonasController::class, 'index'])->name('zonas-admin');
+	Route::post('zonas-store', [ZonasController::class, 'store'])->name('zonas-store');
 	Route::get('servicios-admin', [ServiciosController::class, 'index'])->name('servicios-admin');
 	Route::post('servicios-store', [ServiciosController::class, 'store'])->name('servicios-store');
 
