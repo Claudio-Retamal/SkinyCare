@@ -19,20 +19,7 @@
                                         aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
-                        <div class="main-heading left_text">
-                            <h2>Additional links</h2>
-                        </div>
-                        <ul class="footer-menu">
-                            <li><a href="it_about.html"><i class="fa fa-angle-right"></i> About us</a></li>
-                            <li><a href="it_term_condition.html"><i class="fa fa-angle-right"></i> Terms and
-                                    conditions</a></li>
-                            <li><a href="it_privacy_policy.html"><i class="fa fa-angle-right"></i> Privacy policy</a>
-                            </li>
-                            <li><a href="it_news.html"><i class="fa fa-angle-right"></i> News</a></li>
-                            <li><a href="it_contact.html"><i class="fa fa-angle-right"></i> Contact us</a></li>
-                        </ul>
-                    </div>
+                
                 </div>
             </div>
             <div class="cprt">
@@ -44,6 +31,7 @@
 <!-- end footer -->
 <!-- js section -->
 <script src="assets-2/js/jquery.min.js"></script>
+<!-- DataTables JS -->
 <script src="assets-2/js/bootstrap.min.js"></script>
 <!-- menu js -->
 <script src="assets-2/js/menumaker.js"></script>
@@ -63,6 +51,12 @@
 <script src="assets-2/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 <script src="assets-2/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="assets-2/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="assets/js/dataTables.material.min.js"></script>
+<script src="assets/js/material-components-web.min.js"></script>
+
+<!-- Agrega el JS de DataTables -->
+
+
 <!-- map js -->
 <script>
     // This example adds a marker to indicate the position of Bondi Beach in Sydney,
@@ -211,6 +205,8 @@
     }
 </script>
 
+
+
 <!-- Contenedor del botón -->
 <!-- Contenedor del botón -->
 <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
@@ -222,5 +218,7 @@
 </script>
 <!-- end google map js -->
 </body>
+
+
 
 </html>

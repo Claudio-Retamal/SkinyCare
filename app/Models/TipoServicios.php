@@ -10,11 +10,11 @@ class TipoServicios extends Model
 {
     use HasFactory;
     protected $table = "tipo_servicios";
-    protected $fillable = ['nombre', 'estado'];
+    protected $fillable = ['tipo_servicio', 'estado'];
     protected $hidden = ['id'];
 
     public function Servicios(): HasMany
     {
         return $this->belongsToy(Servicios::class);
-    }
+    }   
 }

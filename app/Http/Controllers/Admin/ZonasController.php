@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Zonas;
 use Illuminate\Http\Request;
+use McKenziearts\Notify\Notifications\Notification;
+
+
 
 class ZonasController extends Controller
 {
@@ -17,34 +20,20 @@ class ZonasController extends Controller
         $zonas = Zonas::all();
         return view('pages.laravel-examples.zonas', compact('zonas'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-        $validated = $request->validate([
-            'nombre' => 'required|max:255',
-        ]);
 
-        if ($validated) {
-           
-        $new_zona = new Zonas();
-        $new_zona->nombre = $request->input('nombre');
-        $new_zona->save();
-        return redirect()->route('admin/zonas')->with('success','Almacenado');
-        } 
+        if (!$request->input('nombre')) {
+            drakify('error'); // for success alert
+            return redirect('zonas-admin');
+        } else {
+            $new_zona = new Zonas();
+            $new_zona->nombre = $request->input('nombre');
+            $new_zona->save();
+            drakify('success'); // for success aler
+            return redirect('zonas-admin');
+        }
     }
 
     /**
@@ -53,6 +42,9 @@ class ZonasController extends Controller
     public function show(string $id)
     {
         //
+        
+
+        
     }
 
     /**

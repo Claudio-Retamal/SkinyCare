@@ -1,5 +1,4 @@
 @include('layouts.header')
-
 <div id="slider" class="section main_slider">
 
     <div class="row">

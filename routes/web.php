@@ -46,13 +46,13 @@ use App\Http\Controllers\SessionsController;
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-            
+
 
 //  Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', function () {
-    return view('index');
+	return view('index');
 });
 
 Route::get('Fotodepilacion-Masculina', [ServiciosMasculinosController::class, 'FotodepilacionMasculina']);
@@ -81,7 +81,7 @@ Route::post('verify', [SessionsController::class, 'show'])->middleware('guest');
 Route::post('reset-password', [SessionsController::class, 'update'])->middleware('guest')->name('password.update');
 Route::get('verify', function () {
 	return view('sessions.password.verify');
-})->middleware('guest')->name('verify'); 
+})->middleware('guest')->name('verify');
 Route::get('/reset-password/{token}', function ($token) {
 	return view('sessions.password.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
@@ -92,17 +92,11 @@ Route::post('user-profile', [ProfileController::class, 'update'])->middleware('a
 
 //Midleware
 Route::group(['middleware' => 'auth'], function () {
-		
+
 	Route::get('billing', function () {
 		return view('pages.billing');
 	})->name('billing');
-	// Route::get('tables', function () {
-	// 	return view('pages.tables');
-	// })->name('tables');
 
-	// Route::get('tables-2', function () {
-	// 	return view('pages.tables-2');
-	// })->name('tables-2');
 
 	Route::get('rtl', function () {
 		return view('pages.rtl');
@@ -114,6 +108,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.notifications');
 	})->name('notifications');
 	Route::get('static-sign-in', function () {
+
 		return view('pages.static-sign-in');
 	})->name('static-sign-in');
 	Route::get('static-sign-up', function () {
@@ -121,8 +116,12 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('static-sign-up');
 	Route::get('zonas-admin', [ZonasController::class, 'index'])->name('zonas-admin');
 	Route::post('zonas-store', [ZonasController::class, 'store'])->name('zonas-store');
+
 	Route::get('servicios-admin', [ServiciosController::class, 'index'])->name('servicios-admin');
 	Route::post('servicios-store', [ServiciosController::class, 'store'])->name('servicios-store');
+	Route::get('servicios-edit/{id}', [ServiciosController::class, 'edit'])->name('servicios-edit');
+	Route::put('servicios-update/{id}', [ServiciosController::class, 'update'])->name('servicios-update');
+	Route::get('servicios-delete/{id}', [ServiciosController::class, 'delete'])->name('servicios-delete');
 
 	Route::get('user-profile', function () {
 		return view('pages.laravel-examples.user-profile');

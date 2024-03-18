@@ -1,0 +1,10 @@
+--CONVERTIR A QUERY BUILDER
+SELECT s.id, s.nombre
+from servicios as s, detalle_servicios as d,
+tipo_servicios as t 
+where s.id = d.servicios_id
+AND
+s.tipo_id = t.id
+--EN FUNCION INDEX TRAER TODOS LOS CAMPOS A MOSTRAR INCLUYENDO LA TABLA DETALLE.
+-- EN FUNCION EDIT PARA TRAER URL IMAGEN AL ACTUALIZAR.
+-- BUSCAR OTRA FORMA DE CARGAR IMAGEN JAVASCRIPT.

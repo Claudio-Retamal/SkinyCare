@@ -1,4 +1,4 @@
-<?php
++<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('zonas');
             $table->unsignedBiginteger('tipo_id')->nullable();
             $table->foreign('tipo_id')->references('id')->on('tipo_servicios')->nullable()->constrained()->onUpdate('cascade');
-            $table->integer('estado');
+            $table->integer('estado')->default(1);
             $table->timestamps();
        
         });

@@ -67,11 +67,12 @@
                         <h4>OUR SERVICE</h4>
                         <div class="categary">
                             <ul>
-                                <li><a href="it_data_recovery.html"><i class="fa fa-angle-right"></i> Data recovery</a></li>
-                                <li><a href="it_computer_repair.html"><i class="fa fa-angle-right"></i> Computer repair</a></li>
-                                <li><a href="it_mobile_service.html"><i class="fa fa-angle-right"></i> Mobile service</a></li>
-                                <li><a href="it_network_solution.html"><i class="fa fa-angle-right"></i> Network solutions</a></li>
-                                <li><a href="it_techn_support.html"><i class="fa fa-angle-right"></i> Technical support</a></li>
+                                <li><a href="it_mobile_service.html"><i class="fa fa-angle-right"></i>Inicio</a></li>
+                                <li><a href="it_data_recovery.html"><i class="fa fa-angle-right"></i>Nosotros</a></li>
+                                <li><a href="it_computer_repair.html"><i class="fa fa-angle-right"></i>Servicios</a></li>
+                                
+                                <li><a href="it_network_solution.html"><i class="fa fa-angle-right"></i> Fototerapia</a></li>
+                                <li><a href="it_techn_support.html"><i class="fa fa-angle-right"></i>Contacto</a></li>
                             </ul>
                         </div>
                     </div>
