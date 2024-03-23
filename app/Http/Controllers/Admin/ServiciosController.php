@@ -35,8 +35,6 @@ class ServiciosController extends Controller
 
     public function store(Request $request)
     {
-
-
         $validated = $request->validate([
             'imagen' => 'required|mimes:jpg,jpeg,bmp,png',
             'name' => 'required|',

@@ -24,7 +24,7 @@
             <div class="col-sm-12 col-md-12">
                 <div class="product-table">
 
-                    
+
                     <table class="table">
                         <thead>
                             <tr>
@@ -48,8 +48,7 @@
                                     </div>
                                 </td>
                                 <td class="col-sm-1 col-md-1 text-center " style="text-align: center">
-                                    <input class="form-control pt-4 mt-4 text-center"
-                                        value="3" type="text">
+                                    <input class="form-control pt-4 mt-4 text-center" value="3" type="text">
                                 </td>
                                 <td class="col-sm-1 col-md-1 text-center">
                                     <p class="price_table">$25.00</p>
@@ -59,22 +58,19 @@
                                 </td>
                                 <td class="col-sm-1 col-md-1"><button type="button" class="bt_main"><i
                                             class="fa fa-trash"></i> Remove</button></td>
+
+                                <td class="col-sm-1 col-md-1"><button type="button" class="bt_main ml-1"><i
+                                            class="fa fa-pencil"></i> Remove</button></td>
                             </tr>
-                           
+
                         </tbody>
                     </table>
                     <table class="table">
                         <tbody>
                             <tr class="cart-form">
                                 <td class="actions">
-                                    <div class="coupon">
-                                        <input name="coupon_code" class="input-text" id="coupon_code"
-                                            placeholder="Coupon code" type="text">
-                                        <input class="button" name="apply_coupon" value="Apply coupon"
-                                            type="submit">
-                                    </div>
-                                    <input class="button" name="update_cart" value="Update cart" disabled=""
-                                        type="submit">
+
+                                  
                                 </td>
                             </tr>
                         </tbody>
@@ -114,8 +110,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><button type="button" class="button">Continue Shopping</button></td>
-                                <td><button class="button">Checkout</button></td>
+                                <td><button type="button" class="btn btn-secondary">Finalizar compra</button></td>
+                                <td><input type="button"  class="btn btn-info">Seguir comprando</button></td>
                             </tr>
                         </tbody>
                     </table>

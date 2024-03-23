@@ -6,9 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateZonaRequest;
 use App\Models\Zonas;
 use Illuminate\Http\Request;
-use McKenziearts\Notify\Notifications\Notification;
-
-
 
 class ZonasController extends Controller
 {

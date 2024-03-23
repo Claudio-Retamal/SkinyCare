@@ -95,7 +95,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <!-- logo start -->
-                        <div class="logo"> <a href="it_home.html"><img src="assets-2/images/logos/logo-min.png"
+                        <div class="logo"> <a href="{{ url('') }}"><img src="assets-2/images/logos/logo-min.png"
                                     alt="logo" /></a> </div>
                         <!-- logo end -->
                     </div>
@@ -104,11 +104,8 @@
                         <div class="menu_side">
                             <div id="navbar_menu">
                                 <ul class="first-ul">
-                                    <li> <a class="active" href="it_home.html">Inicio</a>
-                                        <ul>
-                                            <li><a href="it_home.html">It Home Page</a></li>
-                                            <li><a href="it_home_dark.html">It Dark Home Page</a></li>
-                                        </ul>
+                                    <li> <a class="active" href="{{ url('') }}">Inicio</a>
+                                       
                                     </li>
                                     <li><a href="it_blog.html">Nosotros</a>
                                         <ul>
