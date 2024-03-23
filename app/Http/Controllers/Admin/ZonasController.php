@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateZonaRequest;
 use App\Models\Zonas;
 use Illuminate\Http\Request;
 use McKenziearts\Notify\Notifications\Notification;
@@ -20,8 +21,8 @@ class ZonasController extends Controller
         $zonas = Zonas::all();
         return view('pages.laravel-examples.zonas', compact('zonas'));
     }
-    
-    public function store(Request $request)
+
+    public function store(CreateZonaRequest $request)
     {
 
         if (!$request->input('nombre')) {

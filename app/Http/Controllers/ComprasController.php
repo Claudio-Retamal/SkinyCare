@@ -8,6 +8,6 @@ class ComprasController extends Controller
 {
     public function Carro()
     {
-        return view('layouts.compras.carro');
+        return view('layouts.compras.carrito');
     }
 }

@@ -1,10 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
-use App\Models\DetalleServicios;
-use App\Models\Servicios;
 use App\Models\Temporal;
 use App\Models\TipoServicios;
 use App\Models\Zonas;
